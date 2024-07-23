@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo con Líneas Diagonales</title>
+    <style>
+        #bingo-card {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .square {
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="bingo-card"></div>
+<svg id="line-svg"></svg>
+
+<script>
+    // Crear el tablero de bingo
+    let bingo = [];
+    let interacion1;
+    let interacion2;
+    let acumulador = 0;
+    for (interacion1 = 0; interacion1 < 5; interacion1++) {
+        let interno = [];
+        for (interacion2 = 0; interacion2 < 5; interacion2++) {
+            acumulador = acumulador + 1;
+            interno[interacion2] = acumulador * 2;
+        }
+        bingo[interacion1] = interno;
+    }
+    console.log(bingo);
+
+    // Crear el tablero en la pantalla
+    const bingoCard = document.getElementById('bingo-card');
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            square.textContent = bingo[i][j];
+            square.id = `square-${i}-${j}`;
+            bingoCard.appendChild(square);
+        }
+    }
+
+    function connectElements(svg, path, startElem, endElem) {
+        const svgContainer = svg.parentNode;
+
+        // Obtener las posiciones de los elementos
+        const startRect = startElem.getBoundingClientRect();
+        const endRect = endElem.getBoundingClientRect();
+
+        // Coordenadas de inicio y fin de la línea
+        const startX = startRect.left + (startRect.width / 2);
+        const startY = startRect.top + (startRect.height / 2);
+        const endX = endRect.left + (endRect.width / 2);
+        const endY = endRect.top + (endRect.height / 2);
+
+        // Ajustar las coordenadas relativas al contenedor SVG
+        const svgRect = svgContainer.getBoundingClientRect();
+        const offsetX = svgRect.left;
+        const offsetY = svgRect.top;
+
+        // Crear el path data para la línea
+        const pathData = `M ${startX - offsetX} ${startY - offsetY} L ${endX - offsetX} ${endY - offsetY}`;
+        path.setAttribute('d', pathData);
+    }
+
+    const svg = document.getElementById('line-svg');
+    const path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.setAttribute('stroke', 'red');
+    path1.setAttribute('stroke-width', 2);
+    path1.setAttribute('fill', 'none');
+    svg.appendChild(path1);
+
+    const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute('stroke', 'red');
+    path2.setAttribute('stroke-width', 2);
+    path2.setAttribute('fill', 'none');
+    svg.appendChild(path2);
+
+    // Conectar los elementos para formar una X
+    connectElements(svg, path1, document.getElementById('square-0-0'), document.getElementById('square-4-4'));
+    connectElements(svg, path2, document.getElementById('square-0-4'), document.getElementById('square-4-0'));
+
+    // Ajustar las líneas cuando la ventana cambia de tamaño
+    window.addEventListener('resize', () => {
+        connectElements(svg, path1, document.getElementById('square-0-0'), document.getElementById('square-4-4'));
+        connectElements(svg, path2, document.getElementById('square-0-4'), document.getElementById('square-4-0'));
+    });
+</script>
+
+</body>
+</html>

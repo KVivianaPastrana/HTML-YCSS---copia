@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="bootstrap-5.3.3-dist/css/bootstrap.css"></script>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="col-12 row formulario">
+          <div class="col-7 formas">
+            <h2> Calcular notas</h2>
+           <form class="g-3 needs-validation" method="#" novalidate onsubmit="event.preventDefault(); notas();">
+             <div class="col-md-4">
+           <label for="txtnumeroUno" class="form-label">Nota #1</label>
+           <input type="number"  step="0.01" class="form-control" id="txtnumeroUno" value="" required>
+           <div class="valid-feedback">
+             Looks good!
+           </div>
+           </div>
+           <div class="col-md-4">
+            <label for="txtnumeroDos" class="form-label">Nota #2</label>
+            <input type="number"  step="0.01" class="form-control" id="txtnumeroDos" value="Mark" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            </div>
+            <div class="col-md-4">
+                <label for="txtnumeroTres" class="form-label">Nota #3</label>
+                <input type="number"  step="0.01" class="form-control" id="txtnumeroTres" value="Mark" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                </div>
+    
+           <div class="col-8">
+             <button class="btn btn-primary" type="submit">Calcular</button>
+           </div>
+         </form>
+       </div>
+       <div class="col-4 respuesta">
+        <h2> Respuesta</h2>
+         <div id="suma"></div>
+         <div id="resultado"></div>
+       </div>
+        </div>
+         <script>
+          function notas() {
+    let numeroUno = parseInt(document.getElementById('txtnumeroUno').value);
+    let numeroDos = parseInt(document.getElementById('txtnumeroDos').value);
+    let numeroTres = parseInt(document.getElementById('txtnumeroTres').value);
+    let porcentaje1 = (numeroUno * 20) / 100;
+    let porcentaje2 = (numeroDos * 35) / 100;
+    let porcentaje3 = (numeroTres * 45) / 100;
+
+    let suma = porcentaje1 + porcentaje2 + porcentaje3;
+    let resultado = '';
+
+    if (suma > 4.5) {
+        resultado = "Nota Superior";
+    } else if (suma <= 4.5 && suma > 3.5) {
+        resultado = "Nota Buena";
+    } else if (suma <= 3.5 && suma >= 3) {
+        resultado = "Nota Media";
+    } else {
+        resultado = "Nota Mala";
+    }
+
+    document.getElementById('suma').innerHTML = '<strong>' + suma.toFixed(2) + '</strong>';
+    document.getElementById('resultado').innerHTML = resultado;
+
+   return false;
+}
+         </script>
+           <script src="js/validate.js"></script>
+           <script src="js/notas.js"></script>
+           <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

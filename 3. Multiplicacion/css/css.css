@@ -1,0 +1,58 @@
+
+
+.formulario{
+    padding: 5px 15px;
+    display: flexbox;
+    flex-wrap: nowrap;
+    border-radius: 6px;
+    margin: 10px;
+}
+
+ .respuesta{
+border:2px solid #f0f0f0;
+margin: 10px;
+padding: 5px;
+border-radius: 6px;
+
+    background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+
+
+}
+.formas{
+    border:2px solid #f0f0f0;
+    padding:30px;
+    margin:10px;
+    border-radius: 6px;
+
+        background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+    
+ 
+}
+
+h2 {
+    overflow: hidden;
+    border-right: 0.15em solid #b0f2c2;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: escribir 3s steps(40, end), parpadeo 0.75s step-end infinite;
+}
+
+@keyframes escribir {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes parpadeo {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #b0f2c2;
+    }
+}

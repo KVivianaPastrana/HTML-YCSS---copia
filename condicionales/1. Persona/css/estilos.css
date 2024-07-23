@@ -1,0 +1,85 @@
+
+
+.btn-primary {
+    background-image: linear-gradient(to right, #ffff00, #00ff00);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /* Sombra */
+    letter-spacing: 0.05em; /* Espaciado entre letras */
+}
+.btn-primary:hover {
+    background-image: linear-gradient(to right, #004cbf, #3399ff); /* Gradiente más oscuro al pasar el cursor */
+}
+
+.formas:hover {
+    transform: translateY(-3px);
+}
+button:hover, input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+
+
+.formulario {
+    padding: 5px 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 6px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+.respuesta {
+    border: 2px solid #f0f0f0;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+}
+.respuesta:hover {
+    transform: translateY(-5px);
+}
+.formas {
+    border: 2px solid #f0f0f0;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+    background-color: #e9ecef;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    overflow: hidden;
+    border-right: 0.15em solid #b0f2c2;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: escribir 3s steps(40, end), parpadeo 0.75s step-end infinite;
+}
+@keyframes escribir {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes parpadeo {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #b0f2c2;
+    }
+}
+

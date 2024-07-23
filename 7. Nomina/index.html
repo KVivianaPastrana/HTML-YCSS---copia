@@ -1,0 +1,68 @@
+
+  <!DOCTYPE html>
+  <html lang="es">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/css.css">
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    
+      <title>Calculadora de Salario</title>
+    
+  </head>
+
+  <body>
+      <div class="container">
+          <div class="col-12 row formulario">
+              <div class="col-7 formas">
+                  <h2>Salario</h2>
+                  <form class="row g-3 needs-validation" id="form-calculadora" novalidate>
+                      <div class="col-md-4">
+                          <label for="txtfecha_inicio" class="form-label">Fecha de inicio</label>
+                          <input type="date" class="form-control" id="txtfecha_inicio" value="" required>
+                          <div class="valid-feedback">¡Looks good!</div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <label for="txtfecha_fin" class="form-label">Fecha de fin</label>
+                          <input type="date" class="form-control" id="txtfecha_fin" value="" required>
+                          <div class="valid-feedback">¡Looks good!</div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <label for="txtsalario_diario" class="form-label">Salario diario</label>
+                          <input type="number" class="form-control" id="txtsalario_diario" value="" required>
+                          <div class="valid-feedback">¡Looks good!</div>
+                      </div>
+                      
+                      <div class="col-8">
+                          <button class="btn btn-primary" type="submit">Calcular</button>
+                      </div>
+                  </form>
+              </div>
+
+              <div class="col-4 respuesta">
+                  <div class="col-12">
+                      <h2>Respuesta</h2>
+                  </div>
+                  <div id="suma"></div>
+                  <div id="pagoSalud"></div>
+                  <div id="pagoPension"></div>
+                  <div id="pagoArl"></div>
+                  <div  id="pagoDescuento"></div>
+                  <div id="pagosTotal"></div>
+
+              </div>
+          </div>
+      </div>
+      <script>
+
+      </script>
+      
+  <script src="JS/OPERACIONES.JS"></script>
+<script   src="JS/JS.JS"></script>
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
+  </html>

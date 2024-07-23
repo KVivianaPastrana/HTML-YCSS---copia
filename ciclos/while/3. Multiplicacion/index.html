@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/css.css">
+<script src="bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="col-12 row formulario">
+            <div class="col-7 formas">
+                <h2>Tabla de Multiplicar</h2>
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="txtMultiplicador" class="form-label"> Tabla de multiplicar:</label>
+                        <input type="number" class="form-control" id="txtMultiplicador" value="" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtDesde" class="form-label">Multiplicar desde:</label>
+                        <input type="number" class="form-control" id="txtDesde" value="" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtHasta" class="form-label">Multiplicar hasta:</label>
+                        <input type="number" class="form-control" id="txtHasta" value="" required>
+                    </div>
+                    <div class="col-8">
+                        <button class="btn btn-primary" type="submit" onclick="tablaDeMultiplicacion(event)">Calcular</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 respuesta">
+                <h2>Respuesta</h2>
+                <div id="resultadoTabla"></div>
+                
+            </div>
+        </div>
+    </div>        
+ 
+        
+     
+
+<script src="js/javascript.js"></script>
+<script  src="js/js.js"  ></script>
+</body>
+</html>

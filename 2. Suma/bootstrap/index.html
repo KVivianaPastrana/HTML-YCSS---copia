@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/css.css">
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    
+</head>
+
+<div class="container">
+    <h2>Lista números 1</h2>
+    <ul class="list-group" id="listaNumeros"></ul>
+    <ul class="list-group" id="listaNumeros2"></ul>
+    <ul class="list-group" id="listaNumeros3"></ul>
+</div>
+
+<script>
+
+    let arregloNumero = [1, 2, 4, 5, 6, 7, 8, 9, 10];
+    let iteracion;
+    let resultadoPrint = "";
+
+    for (iteracion = 0; iteracion < arregloNumero.length; iteracion++) {
+        resultadoPrint += '<li class="list-group-item">' + arregloNumero[iteracion] + '</li>';
+    }
+
+    console.log(resultadoPrint);
+    document.getElementById('listaNumeros').innerHTML = resultadoPrint;
+
+arregloNumero=[];
+    for(iteracion=0;iteracion<10;iteracion++){
+        numero =iteracion+1;
+        arregloNumero.push(numero);
+    }
+
+    resultadoPrint="";
+
+    for(iteracion=0;iteracion<arregloNumero.length;iteracion++){
+        resultadoPrint += '<li class="list-group-item">' + arregloNumero[iteracion] + '</li>';
+    }
+    console.log(resultadoPrint);
+    document.getElementById('listaNumeros2').innerHTML = resultadoPrint;
+//-------------------------
+    resultadoPrint="";
+    resultadoPrint = "";
+        let arreglo = [];
+        let numeros = 1; // Inicializamos la variable numero en 1
+
+        for (let iteracion = 4; iteracion <= 5; iteracion++) {
+            numeros *= iteracion; // Calculamos el factorial
+            arreglo.push(numeros); // Añadimos el factorial al arreglo
+        }
+
+        resultadoPrint = "";
+        for (let iteracion = 0; iteracion < arreglo.length; iteracion++) {
+            resultadoPrint += '<li class="list-group-item">' + arreglo[iteracion] + '</li>';
+        }
+
+        console.log(resultadoPrint);
+        document.getElementById('listaNumeros3').innerHTML = resultadoPrint;
+</script>
+</body>
+</html>
